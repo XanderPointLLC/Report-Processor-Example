@@ -102,7 +102,7 @@ def output(df: pd.DataFrame):
     # Find columns with NA
     cols_with_na = df.columns[df.isna().any()].tolist()
 
-    warnings = []
+    warnings = WARNING_COLLECTION
     if cols_with_na:
         warnings.append(
             {"Warning": f"The following columns are missing values: {', '.join(cols_with_na)}"}
